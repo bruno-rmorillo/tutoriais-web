@@ -29,9 +29,9 @@
             success: function(valor_Return) //Função que recebe o retorno.
             {
                 if (valor_Return != "0") {
-                    alert(valor_Return);
+                    console.log(valor_Return);
                 } else {
-                    alert("Erro");
+                    console.log("Erro");
                 }
             }
         });
