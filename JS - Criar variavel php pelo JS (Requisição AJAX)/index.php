@@ -18,9 +18,9 @@
         cria_Variavel(valor, nome_Variavel);
     });
 
-    function cria_Variavel(valor, nome_Variavel) {
+    function cria_Variavel(nome_Variavel, valor) {
         $.ajax({
-            url: 'cria_Variavel.php', //Pagina php que possui 'metodos'
+            url: '<?php echo $cria_Variavel; ?>', //Pagina php que possui 'metodos'
             type: 'POST', //simula um submit usando o metodo post
             data: {
                 'valor': valor, //passa valor da sessão.

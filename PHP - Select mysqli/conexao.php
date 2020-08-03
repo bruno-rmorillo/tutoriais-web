@@ -17,4 +17,6 @@ $senha = "xyz";
 $db = "eleva";
 
 $conexao = mysqli_connect($host, $usuario, $senha, $db) or die('Erro ao se conectar, php/conexao.php. Query0000000001');
-?>
+
+// Caso algo tenha dado errado, exibe uma mensagem de erro
+if (mysqli_connect_errno()) trigger_error(mysqli_connect_error());
