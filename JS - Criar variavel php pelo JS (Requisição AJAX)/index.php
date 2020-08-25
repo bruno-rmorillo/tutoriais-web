@@ -12,27 +12,23 @@
         // Valor da sessão.
         var valor = $("input#valor").val();
         // Nome da sessão.
-        nome_Variavel = "variavel";
+        var nome_Variavel = "variavel";
 
         //Chama a função que faz a requisição em AJAX.
-        cria_Variavel(valor, nome_Variavel);
+        cria_Variavel(nome_Variavel, valor);
     });
 
     function cria_Variavel(nome_Variavel, valor) {
         $.ajax({
-            url: '<?php echo $cria_Variavel; ?>', //Pagina php que possui 'metodos'
+            url: 'exe/cria_Sessao.php', //Pagina php que possui 'metodos'
             type: 'POST', //simula um submit usando o metodo post
             data: {
-                'valor': valor, //passa valor da sessão.
                 'nome_Variavel': nome_Variavel, //passa o nome da sessão.
+                'valor': valor, //passa valor da sessão.
             },
             success: function(valor_Return) //Função que recebe o retorno.
             {
-                if (valor_Return != "0") {
-                    console.log(valor_Return);
-                } else {
-                    console.log("Erro");
-                }
+                console.log(valor_Return);
             }
         });
     }
